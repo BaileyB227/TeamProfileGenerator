@@ -42,14 +42,14 @@ function addTeamMember() {
     .then(function({name, role, id, email}) {
         let roleInfo = "";
         if (role === "Engineer") {
-            roleInfo = "GitHub username";
+            roleInfo = "What is their GitHub Username?";
         } else if (role === "Intern") {
-            roleInfo = "school name";
+            roleInfo = "What is their school name?";
         } else {
-            roleInfo = "office phone number";
+            roleInfo = "What is their office number?";
         }
         inquirer.prompt([{
-            message: `Enter team member's ${roleInfo}`,
+            message: `${roleInfo}`,
             name: "roleInfo"
         },
         {
@@ -95,7 +95,7 @@ function startHtml() {
         <title>Team Profile</title>
     </head>
     <body>
-        <nav class="navbar navbar-dark bg-dark mb-5">
+        <nav class="navbar navbar-dark mb-5 bg-danger">
             <span class="navbar-brand mb-0 h1 w-100 text-center">Team Profile</span>
         </nav>
         <div class="container">
@@ -118,7 +118,7 @@ function addHtml(member) {
        if (role === "Engineer") {
            const gitHub = member.getGitHub();
            data = `<div class="col-6">
-           <div class="card mx-auto mb-3" style="width: 18rem">
+           <div class="card mx-auto mb-3 bg-primary" style="width: 18rem b">
            <h5 class="card-header">${name}<br /><br />Engineer</h5>
            <ul class="list-group list-group-flush">
                <li class="list-group-item">ID: ${id}</li>
@@ -130,7 +130,7 @@ function addHtml(member) {
        } else if (role === "Intern") {
            const school = member.getSchool();
            data = `<div class="col-6">
-           <div class="card mx-auto mb-3" style="width: 18rem">
+           <div class="card mx-auto mb-3 bg-primary" style="width: 18rem">
            <h5 class="card-header">${name}<br /><br />Intern</h5>
            <ul class="list-group list-group-flush">
                <li class="list-group-item">ID: ${id}</li>
@@ -142,7 +142,7 @@ function addHtml(member) {
        } else {
            const officeNumber = member.getOfficeNumber();
            data = `<div class="col-6">
-           <div class="card mx-auto mb-3" style="width: 18rem">
+           <div class="card mx-auto mb-3 bg-primary" style="width: 18rem">
            <h5 class="card-header">${name}<br /><br />Manager</h5>
            <ul class="list-group list-group-flush">
                <li class="list-group-item">ID: ${id}</li>
