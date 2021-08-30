@@ -81,6 +81,8 @@ This is an example of how to list things you need to use the software and how to
 
 Used to generate your entire teams profile!
 
+![Gif using the app](./usageGIF.gif)
+
 
 ## License
 
